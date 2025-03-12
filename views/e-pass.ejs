@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xgate Visa E-Pass</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background: #f4f7f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 60%;
+        padding: 30px;
+        text-align: center;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .logo {
+        width: 50px;
+        height: 50px;
+      }
+
+      h2 {
+        color: #007bff;
+        margin: 0;
+        font-size: 26px;
+      }
+
+      .details {
+        text-align: left;
+        font-size: 18px;
+        margin-top: 20px;
+        padding: 20px;
+        background: #f9f9f9;
+        border-radius: 10px;
+      }
+
+      .details p {
+        margin: 10px 0;
+      }
+
+      .highlight {
+        font-weight: bold;
+        color: #007bff;
+      }
+
+      .footer {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Xgate Logo and Branding -->
+      <div class="header">
+        <img
+          src="https://tse2.mm.bing.net/th?id=OIP.ifjP049QQJbG1XWtG1iUuwHaCR&pid=Api&P=0&h=180"
+          alt="Xgate Logo"
+          height="300px"
+          class="logo"
+        />
+        <h2>Xgate Visa E-Pass</h2>
+      </div>
+
+      <div class="details">
+        <p>
+          <span class="highlight">Name:</span> <%= application.firstName %> <%=
+          application.middleName %> <%= application.lastName %>
+        </p>
+        <p><span class="highlight">Gender:</span> <%= application.gender %></p>
+        <p>
+          <span class="highlight">Date of Birth:</span> <%=
+          application.dob.toDateString() %>
+        </p>
+        <p>
+          <span class="highlight">Nationality:</span> <%=
+          application.nationality %>
+        </p>
+        <p>
+          <span class="highlight">Passport Number:</span> <%= application._id %>
+        </p>
+        <p>
+          <span class="highlight">Visa Type:</span> <%= application.purpose %>
+        </p>
+        <p>
+          <span class="highlight">Application Status:</span> <%=
+          application.status %>
+        </p>
+        <p>
+          <span class="highlight">Applied Date:</span> <%= new
+          Date(application.appliedDate).toDateString() %>
+        </p>
+      </div>
+
+      <div class="footer">
+        <p>Issued by Xgate | Secure Visa Processing</p>
+      </div>
+    </div>
+  </body>
+</html>
